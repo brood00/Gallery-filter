@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
+
+body {
+    font-family: Open sans;
+    font-size: 16px;
+    background-color: #fff;
+    color: #000;
+}
+
+.container {
+    max-width: 800px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.btns__filter {
+    display: flex;
+    justify-content: center;
+    max-width: 750px;
+    gap: 35px;
+    margin-top: 30px;
+}
+.btn__filter {
+    padding: 4px 8px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: .2s linear;
+}
+
+.btn__filter.active {
+    font-weight: 700;
+}
+
+.gallery__box {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    max-width: 750px;
+    gap: 7px;
+    margin-top: 10px;
+}
+.gallery__item {
+    width: 250px;
+    height: 220px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    display: block;
+}
+
+.gallery__item.hidden {
+    display: none;
+}
+
+.gallery__item:hover {
+    transform: scale(1.03);
+}
+
+.gallery__card {
+    width: 250px;
+    height: 220px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+@media(max-width:800px) {
+    .gallery__card, .gallery__item {
+    width: 220px;
+    height: 200px;
+    }
+
+    .gallery__box {
+        max-width:  680px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media(max-width:700px) {
+        .gallery__box {
+            grid-template-columns: repeat(2,1fr);
+            justify-content: center;
+            max-width: 447px;
+        }
+}
+
+@media(max-width:480px) {
+    .gallery__box {
+        gap: 4px;
+    }
+
+    .gallery__card, .gallery__item {
+        width: 200px;
+        height: 180px;
+    }
+
+        .gallery__box {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        max-width: 404px;
+    }
+
+    .btns__filter  {
+        gap: 15px;
+    }
+
+    .gallery__item:hover {
+        transform: scale(1);
+    }
+
+}
+
+@media(max-width:415px) {
+        .gallery__card, .gallery__item {
+        width: 160px;
+        height: 140px;
+    }
+
+        .gallery__box {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        max-width: 324px;
+    }
+
+    .btn__filter  {
+        font-size: 15px;
+    }
+
+    .btns__filter {
+        gap: 13px;
+    }
+}
